@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui">  
+    <h:head>  
+        <link rel="stylesheet" href="css/style.css"/>
+    </h:head>        
+    <h:body>  
+        <div class="centerX_Y">
+            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+            <h:panelGrid columns="2" cellpadding="5">
+                <h:outputLabel for="Usuário" value="Usuário:" />
+                <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
+
+                <h:outputLabel for="Senha" value="Senha:" />
+                <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
+
+                <f:facet name="footer">
+                    <p:commandButton value="Entrar" update="growl" actionListener="#{userLoginView.login}"
+                                     oncomplete="handleLoginRequest(xhr, status, args)" />
+                    <p:link outcome="index.jsf" value="Cadastre-se">
+                        <f:param name="productId" value="10" />
+                    </p:link>
+                </f:facet>
+            </h:panelGrid>
+        </div>
+        
+        <div class="footer">
+            <p><a class="linkLF" href="https://github.com/FonteneleLucas/nowOrder" target="_blank" >LUCAS FONTENELE</a> <br/>
+                <span>&copy; 2017 </span></p>
+        </div>
+    </h:body>  
+</html>  
+
