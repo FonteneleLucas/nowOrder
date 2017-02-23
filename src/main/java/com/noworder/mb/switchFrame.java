@@ -11,39 +11,24 @@ import javax.inject.Named;
 @RequestScoped
 public class switchFrame {
 
-    private String message;
     private int id;
 
-    public String getMessage() {
-        return message;
+    public String src(){
+        int num = getId();
+        if(num == 1){
+            return "Ok teste";
+        }else{
+            return "Erro no teste";
+        }
+                 
     }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    /**
-     * @return the id
-     */
+    
     public int getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(int id) {
         this.id = id;
         System.out.println(id);
-    }
-
-    private Integer userNumber = null;
-
-    public void setUserNumber(Integer user_number) {
-        userNumber = user_number;
-    }
-
-    public Integer getUserNumber() {
-        return userNumber;
     }
 }

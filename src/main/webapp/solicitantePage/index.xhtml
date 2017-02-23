@@ -18,19 +18,13 @@
                     <p:growl autoUpdate="true"/>
                     <p:panelMenu>
                         <p:submenu label="Pedidos">
-<!--                            <p:menuitem value="Realizar" action="#{switchFrame.setId(1)}" icon="fa fa-paper-plane" />
-                            <p:menuitem value="Informações" onclick=""  icon="fa fa-reorder" />-->
-                            <h:inputText id="inputGuess" 
-                                         value="#{switchFrame.userNumber}" 
-                                         >
-                            </h:inputText>
-
+                            <p:menuitem value="Realizar" actionListener="#{switchFrame.setId(1)}" icon="fa fa-paper-plane" />
+                            <p:menuitem value="Teste" onclick=""  icon="fa fa-reorder" />
                         </p:submenu>
                         <p:submenu label="Buscar">
                             <p:menuitem value="Produto no estoque" actionListener="#{menuView.delete}"  ajax="false" icon="fa fa-chevron-down"/>
                             <p:menuitem value="Recebedores" actionListener="#{menuView.delete}"  ajax="false" icon="fa fa-child"/>
                         </p:submenu>
-                        <p:separator />
                         <p:submenu label="Mais" >
                             <p:menuitem value="Lembretes" outcome="index.jsf" icon="fa fa-leanpub" />
                             <p:menuitem value="Mensagem direta" outcome="index.jsf" icon="fa fa-comments" />
@@ -40,23 +34,16 @@
                             </p:submenu>
                         </p:submenu>
                     </p:panelMenu>
+                    <h:outputText value="#{switchFrame.src()}" />
                 </h:form>
-
             </div>
         </div>
         <div class="centerX_Y">
             <iframe src="index.jsf"  name="content" width="800" 
                     height="500" scrolling="no" frameborder="0"  
                     application="false"> 
-
             </iframe>
-
-
         </div>
-        <h:outputLabel for="fanClub">
-            <h:outputText id="fanClubLabel"
-                          value="#{switchFrame.userNumber}"/>
-        </h:outputLabel>
         <div class="footer">
             <p><a class="linkLF" href="https://github.com/FonteneleLucas/nowOrder" target="_blank" >LUCAS FONTENELE</a> <br/>
                 <span>&copy; 2017 </span></p>
