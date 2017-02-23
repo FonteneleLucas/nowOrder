@@ -19,18 +19,18 @@ body,html{
 }
 
 .centerX_Y{
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
+    padding-left: 1%;
+    margin-left: 31%;
+    width: 59.5%;
     position: relative;
-    top: 50%;
+    top: 45%;
 
     -webkit-transform: translateY( -50% );
     -moz-transform: translateY( -50% );
     transform: translateY( -50% );
-    background-color: #e7a61a;
-    padding-top: 2%;
-    padding-bottom: 2%;
+   
+    padding-top: 1%;
+    padding-bottom: 1%;
     border-radius: 5px;
 
     -webkit-box-shadow: 0px 0px 100px 1px rgba(217,195,217,1);

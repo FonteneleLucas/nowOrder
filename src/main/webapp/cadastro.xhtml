@@ -11,22 +11,33 @@
         <div class="centerX_Y">
             <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
             <h:panelGrid columns="1" cellpadding="5">
-                <h:outputLabel for="Usuário" value="Usuário:" />
+                <h:outputLabel for="Usuário" value="Nome: *" />
                 <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
 
-                <h:outputLabel for="Senha" value="Senha:" />
+                <h:outputLabel for="Senha" value="Senha: *" />
                 <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
 
+                <p:outputLabel for="console" value="Tipo de usuário: *" />
+                <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" >
+                    <f:selectItem itemLabel="Solicitante" itemValue="Solicitante" />
+                    <f:selectItem itemLabel="Recebedor" itemValue="Recebedor" />
+                    <f:selectItem itemLabel="Gerênciador" itemValue="Recebedor" />
+                </p:selectOneMenu>
+
+                <p:outputLabel for="console" value="Observações:" />
+                <p:inputTextarea rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} caracteres restantes." autoResize="false" />
+                <h:outputText id="display" />
+
                 <f:facet name="footer">
-                    <p:commandButton value="Entrar" update="growl" actionListener="#{userLoginView.login}"
-                                     oncomplete="handleLoginRequest(xhr, status, args)" />
-                    <p:link outcome="cadastro.jsf" value="Cadastre-se">
-                        <f:param name="productId" value="10" />
-                    </p:link>
+                    <div class="buttonCenter">
+                        <p:button outcome="index.jsf" value="Concluir">
+                            
+                        </p:button>
+                    </div>
                 </f:facet>
             </h:panelGrid>
         </div>
-        
+
         <div class="footer">
             <p><a class="linkLF" href="https://github.com/FonteneleLucas/nowOrder" target="_blank" >LUCAS FONTENELE</a> <br/>
                 <span>&copy; 2017 </span></p>
