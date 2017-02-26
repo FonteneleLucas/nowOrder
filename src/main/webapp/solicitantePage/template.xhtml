@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Isso será mostrado para todos usuarios-->
 <html xmlns="http://www.w3.org/1999/xhtml"  
       xmlns:h="http://java.sun.com/jsf/html"  
       xmlns:f="http://java.sun.com/jsf/core"  
-      xmlns:p="http://primefaces.org/ui">  
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">  
+
     <h:head>  
         <link rel="stylesheet" href="css/styleSolicitante.css"/>
     </h:head>        
@@ -17,32 +20,30 @@
                 <h:form>
                     <p:growl autoUpdate="true"/>
                     <p:panelMenu>
-                        <p:submenu label="Pedidos">
-                            <p:menuitem value="Realizar" actionListener="#{switchFrame.setId(1)}" icon="fa fa-paper-plane" />
-                            <p:menuitem value="Teste" onclick=""  icon="fa fa-reorder" />
+                        <p:submenu label="Mais" >
+                            <p:menuitem value="Pedido" outcome="pedido.jsf" icon="fa fa-paper-plane" />
+                            <p:menuitem value="Informações" outcome="informacao.jsf" icon="fa fa-reorder" />
                         </p:submenu>
                         <p:submenu label="Buscar">
-                            <p:menuitem value="Produto no estoque" actionListener="#{menuView.delete}"  ajax="false" icon="fa fa-chevron-down"/>
-                            <p:menuitem value="Recebedores" actionListener="#{menuView.delete}"  ajax="false" icon="fa fa-child"/>
+                            <p:menuitem value="Produto no estoque" outcome="estoque.jsf"  ajax="false" icon="fa fa-chevron-down"/>
+                            <p:menuitem value="Recebedores" outcome="recebedores.jsf"  ajax="false" icon="fa fa-child"/>
                         </p:submenu>
                         <p:submenu label="Mais" >
-                            <p:menuitem value="Lembretes" outcome="index.jsf" icon="fa fa-leanpub" />
-                            <p:menuitem value="Mensagem direta" outcome="index.jsf" icon="fa fa-comments" />
+                            <p:menuitem value="Lembretes" outcome="lembretes.jsf" icon="fa fa-leanpub" />
+                            <p:menuitem value="Mensagem direta" outcome="direct.jsf" icon="fa fa-comments" />
                             <p:submenu label="Perfil" >
-                                <p:menuitem value="Editar" outcome="index.jsf" icon="fa fa-edit" />
+                                <p:menuitem value="Editar" outcome="edit.jsf" icon="fa fa-edit" />
                                 <p:menuitem value="Sair" outcome="/index.html" icon="fa fa-user" />
                             </p:submenu>
                         </p:submenu>
                     </p:panelMenu>
-                    <h:outputText value="#{switchFrame.src()}" />
                 </h:form>
             </div>
         </div>
         <div class="centerX_Y">
-            <iframe src="index.jsf"  name="content" width="800" 
-                    height="500" scrolling="no" frameborder="0"  
-                    application="false"> 
-            </iframe>
+            <ui:insert name="conteudo">
+                
+            </ui:insert>
         </div>
         <div class="footer">
             <p><a class="linkLF" href="https://github.com/FonteneleLucas/nowOrder" target="_blank" >LUCAS FONTENELE</a> <br/>
@@ -50,4 +51,5 @@
         </div>
     </h:body>  
 </html>  
+
 

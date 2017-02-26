@@ -1,6 +1,7 @@
 package com.noworder.mb;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 /**
@@ -10,25 +11,28 @@ import javax.inject.Named;
 @Named(value = "switchFrame")
 @RequestScoped
 public class switchFrame {
-
     private int id;
 
-    public String src(){
-        int num = getId();
-        if(num == 1){
-            return "Ok teste";
-        }else{
-            return "Erro no teste";
-        }
-                 
-    }
-    
+    /**
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
         System.out.println(id);
     }
+    public String src(){
+        if(id == 1 || getId() == 1){
+            return "teste1";
+        }else{
+            return "teste2";
+        }
+    }
+
 }
