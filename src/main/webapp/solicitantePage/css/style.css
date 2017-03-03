@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21/02/2017, 23:45:31
+    Author     : Lucas
+    Page       : Solicitante          
+*/
+td textarea{
+    border: 0px;
+    border-radius: 5px;
+    width: 100%;
+    resize: none;
+}
+
+.ui-column-title, td, .ui-button-text, .ui-button-text-icon-left, .ui-widget, .ui-menuitem{
+    font-size: 1.2vw;
+}
+
+.ui-datatable{
+    width: 98% !important;
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    display:block;
+}
+
+.center-block{
+    width: 400px;
+    margin: 0 auto;
+}
+
+
+
+/*.ui-button-icon-left, .ui-icon, .ui-c .fa .fa-plus{
+    size: 10%;
+}*/

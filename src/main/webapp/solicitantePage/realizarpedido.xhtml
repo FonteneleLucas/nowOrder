@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"  
+             xmlns:h="http://java.sun.com/jsf/html"    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+    <ui:define name="conteudo">
+        <!--
+                        <h:form>
+                            <p:messages autoUpdate="true" />
+                
+                            <p:panelGrid columns="2" >
+                                <f:facet name="header">
+                                    <h:outputText value="Novo pedido" />
+                                </f:facet>
+                
+                                <p:outputLabel for="codigo" value="Solicitar pedido via:" />
+                                <p:selectOneMenu id="codigo" value="#{selectOneMenuView.console}" class="widthComp">
+                                    <f:selectItem itemLabel="Nome" itemValue="" />
+                                    <f:selectItem itemLabel="Código" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="Categoria" itemValue="Xbox One" />
+                
+                                </p:selectOneMenu>
+                
+                
+                                <p:outputLabel for="produto" value="Item" class="widthLabel" />
+                                <p:selectOneMenu id="produto" value="#{selectOneMenuView.console}" style="width:125px">
+                                    <f:selectItem itemLabel="Select One" itemValue="" />
+                                    <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                    <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                    <f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+                                </p:selectOneMenu>
+                
+                
+                                <h:outputLabel for="basic" value="Quantidade: " />
+                                <p:spinner id="basic" value="#{spinnerView.number1}"  class="widthComp" />
+                                <h:outputText value="Informações adicionais:" />
+                                <textarea  class="text-areaDetalhes">Nenhuma
+                                </textarea>
+                            </p:panelGrid>
+                        </h:form>
+                
+                    <div class="ui-g">
+                        <div class="ui-g-12  ui-panelgrid ui-widget ui-panelgrid-header">
+                            Pedidos
+                        </div>
+        
+                    </div> -->
+        <h:form id="form">
+            <p:growl id="msg" />
+
+
+            <p:dataTable id="multipleDT" var="car" value="#{dtSelectionView.cars1}" selectionMode="multiple" selection="#{dtSelectionView.selectedCars}" 
+                         rowKey="#{car.id}" rows="5" paginator="true" paginatorPosition="bottom"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} "
+                         >
+                <f:facet name="header">
+                    <p:outputPanel>
+                        <h:outputText value="Busca de produto" />
+                        <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+                    </p:outputPanel>
+                </f:facet>
+                <p:column headerText="Código">
+                    <h:outputText value="#{car.id}" />
+                </p:column>
+                <p:column headerText="Nome">
+                    <h:outputText value="#{car.brand}"/>
+                </p:column>
+                <p:column headerText="Quantidade">
+                    <h:outputText value="C01B06PA" />
+                </p:column>
+                <p:column headerText="Localização">
+                    <h:outputText value="Local" />
+                </p:column>
+                <p:column headerText="Recebedor">
+                    <p:selectOneMenu id="codigo" value="#{selectOneMenuView.console}" class="widthComp">
+                        <f:selectItem itemLabel="User 1" itemValue="" />
+                        <f:selectItem itemLabel="User 2" itemValue="Xbox One" />
+                        <f:selectItem itemLabel="User 3" itemValue="Xbox One" />
+
+                    </p:selectOneMenu>
+                </p:column>
+                <p:column headerText="Informações adicionais">
+                    <h:inputTextarea value="Teste"/>
+                </p:column>
+                <p:column headerText="Adicionar">
+                    <p:inputSwitch value="#{selectBooleanView.value1}" onLabel="Add" offLabel="Del"/>
+                </p:column>
+                <f:facet name="footer">
+                    <p:button outcome="realizarpedido" value="Concluir" icon="fa fa-check"/>
+                    <p:button outcome="realizarpedido" value="Cancelar" icon="fa fa-remove"/>
+                    <br/>
+                    <span>0 itens adicionados</span>
+                
+                </f:facet>
+                
+            </p:dataTable>
+        </h:form>
+    </ui:define>
+</ui:decorate>  
+

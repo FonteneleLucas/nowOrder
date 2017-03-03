@@ -8,13 +8,14 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">  
 
     <h:head>  
-        <link rel="stylesheet" href="css/styleSolicitante.css"/>
+        <link rel="stylesheet" href="css/styleTemplate.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
     </h:head>        
     <h:body>  
         <div class="left">
             <div class="menuClass">
                 <p:panelGrid columns="2">
-                    <img class="imgUser" src="img/avatar.png" alt="" />
+                    <img class="imgUser img-responsive center-block" src="img/avatar.png" alt="" />
                     <h:outputText value="Lucas Fontenele" />
                 </p:panelGrid>
                 <h:form>
@@ -22,7 +23,7 @@
                     <p:panelMenu>
                         <p:submenu label="Mais" >
                             <p:menuitem value="Pedido" outcome="pedido.jsf" icon="fa fa-paper-plane" />
-                         
+
                         </p:submenu>
                         <p:submenu label="Buscar">
                             <p:menuitem value="Produto no estoque" outcome="estoque.jsf"  ajax="false" icon="fa fa-chevron-down"/>
