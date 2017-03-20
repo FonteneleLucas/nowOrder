@@ -16,11 +16,11 @@ td textarea{
 }
 
 .ui-column-title, td, .ui-button-text, .ui-button-text-icon-left, .ui-widget, .ui-menuitem{
-    font-size: 1.2vw;
+    font-size: 0.9vw;
 }
 
 .ui-datatable{
-    width: 98% !important;
+    width: 100% !important;
 }
 
 .img-responsive{
@@ -34,8 +34,45 @@ td textarea{
     margin: 0 auto;
 }
 
+.produtosDesc{
+    background-color: #e8ebef;
+    width:70px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    color: #555;
+    font-size: 1vw;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 
+.produtosDesc:hover{
+    background-color: #DDD;
+    font-size: 1vw;
+    color: #111;
+}
 
-/*.ui-button-icon-left, .ui-icon, .ui-c .fa .fa-plus{
-    size: 10%;
-}*/
+.ui-inputswitch{
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+}
+
+.ui-wizard{
+    margin-top: 0px !important;
+}
+
+.ui-spinner-input{
+    width: 50% !important;
+}
+
+.ui-inputfield{
+    padding-right: 1% !important;
+}
+
+.contador{
+    float: right;
+    padding-right: 1%;
+}

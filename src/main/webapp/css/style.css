@@ -140,39 +140,3 @@ label{
     font-weight: 500;
     float: right;
 }
-
-
-/* COdigo novo */
-.left{
-    width: 20%;
-    height: 91%;
-    background-color: rgba(0,0,0,0.4);
-    float: left;
-}
-
-.right{
-    width: 80%;position: absolute;
-    height: 91%;
-    background-image: url("img/background.");
-    float: right;
-}
-
-.imgUser{
-    width: 30px !important;
-}
-
-.ui-panelgrid {
-    border-radius: 10px !important;
-    text-align: center;
-    width: 96% !important;
-}
-
-.menuClass{
-    width: 100%;
-    padding-top: 2%;
-}
-
-.ui-panelmenu{
-    width: 95.8% !important;
-    padding-left: 2.4%;
-}

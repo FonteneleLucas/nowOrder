@@ -8,8 +8,6 @@
              xmlns:f="http://xmlns.jcp.org/jsf/core">  
 
     <ui:define name="conteudo">
-
-
         <h:form id="form">
             <p:growl id="msgs" showDetail="true"/>
 
@@ -18,7 +16,7 @@
                          rowKey="#{car.id}" rows="5" paginator="true" paginatorPosition="bottom"
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} ">
                 <f:facet name="header">
-                    Produtos do pedido #12345
+                    Gerenciamento de pedidos
                 </f:facet>
 
                 <p:ajax event="rowEdit" listener="#{dtEditView.onRowEdit}" update=":form:msgs" />
@@ -27,49 +25,73 @@
                 <p:column headerText="Código">
                     <p:cellEditor>
                         <f:facet name="output"><h:outputText value="#{car.id}" /></f:facet>
-                        <f:facet name="input"><p:inputText id="modelInput" value="#{car.id}" disabled="true"/></f:facet>
+                        <f:facet name="input"><p:inputText id="modelInput" value="#{car.id}" style="width:100%"/></f:facet>
                     </p:cellEditor>
                 </p:column>
 
-                <p:column headerText="Nome">
+                <p:column headerText="Descrição">
                     <p:cellEditor>
                         <f:facet name="output"><h:outputText value="#{car.year}" /></f:facet>
-                        <f:facet name="input"><p:inputText value="#{car.year}" label="Year" disabled="true"/></f:facet>
+                        <f:facet name="input"><p:inputText value="#{car.year}" style="width:100%" label="Year"/></f:facet>
                     </p:cellEditor>
                 </p:column>
 
-                <p:column headerText="Categoria">
+                <p:column headerText="Produtos">
                     <p:cellEditor>
-                        <f:facet name="output"><h:outputText value="#{car.brand}" /></f:facet>
+                        <f:facet name="output">
+                            <p:link href="pedido.jsf"><div class="produtosDesc">Verificar</div></p:link>
+                        </f:facet>
                         <f:facet name="input">
-                            <h:selectOneMenu value="#{car.brand}" disabled="true">
+                            <h:selectOneMenu value="#{car.brand}" style="width:100%">
                                 <f:selectItems value="#{dtEditView.brands}" var="man" itemLabel="#{man}" itemValue="#{man}" />
                             </h:selectOneMenu>
                         </f:facet>
                     </p:cellEditor>
                 </p:column>
-                <p:column headerText="Quantidade">
+                
+                <p:column headerText="Para">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="User 01" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{car.year}" style="width:100%" label="Year"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                
+                <p:column headerText="Status">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="Encaminhado" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{car.year}" style="width:100%" label="Year"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                
+                <p:column headerText="Horario">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="Encaminhado" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{car.year}" style="width:100%" label="Year"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                
+                <p:column headerText="Informção adicional">
                     <p:cellEditor>
                         <f:facet name="output">
-                            <p:column headerText="Informações adicionais">
-                                <p:spinner disabled="true"></p:spinner>
-                            </p:column>
+                            <h:inputTextarea value="Teste" disabled="true"/>
                         </f:facet>
                         <f:facet name="input">
-                            <p:spinner disabled="false"></p:spinner>
+                            <h:inputTextarea value="Teste" disabled="false"/>
                         </f:facet>
                     </p:cellEditor>
                 </p:column>
 
-                <p:column headerText="- - - - - - - - -">
-<!--                    <p:inputSwitch value="#{selectBooleanView.value2}" class="switch" onLabel="&nbsp; + &nbsp;" offLabel=" - ">
-                    </p:inputSwitch>-->
-                    <p:link href="pedido.jsf"><div class="produtosDesc">Remover</div></p:link>
-                </p:column>
                 <p:column style="width:32px">
                     <p:rowEditor />
                 </p:column>
+                <f:facet name="footer">
+                    <p:button outcome="realizarpedido" value="Novo" icon="fa fa-plus"/>
+                    <p:button outcome="realizarpedido" value="Cancelar" icon="fa fa-remove"/>
+                </f:facet>
             </p:dataTable>
+
+
+
         </h:form>
     </ui:define>
 </ui:decorate>  

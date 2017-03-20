@@ -21,9 +21,9 @@
                 <h:form>
                     <p:growl autoUpdate="true"/>
                     <p:panelMenu>
-                        <p:submenu label="Mais" >
-                            <p:menuitem value="Pedido" outcome="pedido.jsf" icon="fa fa-paper-plane" />
-
+                        <p:submenu label="Pedidos" >
+                            <p:menuitem value="Novo pedido" outcome="realizarpedido.jsf" icon="fa fa-paper-plane" />
+                            <p:menuitem value="Gerenciamento" outcome="gerenciamento.jsf" icon="fa fa-paper-plane" />
                         </p:submenu>
                         <p:submenu label="Buscar">
                             <p:menuitem value="Produto no estoque" outcome="estoque.jsf"  ajax="false" icon="fa fa-chevron-down"/>
@@ -41,10 +41,12 @@
                 </h:form>
             </div>
         </div>
-        <div class="centerX_Y">
-            <ui:insert name="conteudo">
-                
-            </ui:insert>
+        <div class="right">
+            <div class="centerX_Y">
+                <ui:insert name="conteudo">
+
+                </ui:insert>
+            </div>
         </div>
         <div class="footer">
             <p><a class="linkLF" href="https://github.com/FonteneleLucas/nowOrder" target="_blank" >LUCAS FONTENELE</a> <br/>
